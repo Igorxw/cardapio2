@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Igor T-bag</title>
+    <style>
+       * body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #444;
+    border-bottom: 3px solid #ff9c22;
+    padding-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    margin: 15px 0 10px 0;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.menu-item input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+.menu-item select {
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    transition: border 0.2s;
+}
+
+.menu-item select:hover {
+    border: 1px solid #ff9c22;
+}
+
+.menu-item .price {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ff9c22;
+    font-weight: bold;
+}
+
+.observacao {
+    margin-top: 30px;
+}
+
+.observacao label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.observacao textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.observacao textarea:focus {
+    border-color: #ff9c22;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #ff9c22;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff9c22;
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+
+    <h1>Cardápio - Restaurante Igor T-bag</h1>
+    <form action="cardapio.php" method="POST">
+
+        <h2>Lanches</h2>
+        <div class="menu">
+            <div class="menu-item">
+                <img src="https://burgerx.com.br/assets/img/galeria/burgers/x-bacon.jpg">
+                <h3>X-Burguer</h3>
+                <p>Delicioso hambúrguer com carne bovina, queijo e molho especial.</p>
+                <input type="checkbox" name="lanches[]" value="X-Burguer">
+                <select name="quantidade_x-burguer">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <span class="price">R$ 8,30</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://catracalivre.com.br/wp-content/uploads/2023/12/istock-155388694-1.jpg">
+                <h3>Misto Quente</h3>
+                <p>Tostado com presunto e queijo.</p>
+                <input type="checkbox" name="lanches[]" value="Misto Quente">
+                <select name="quantidade_misto_quente">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <span class="price">R$ 7,00</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://img.cybercook.com.br/receitas/151/x-salada-3.jpeg">
+                <h3>X-Salada</h3>
+                <p>Hambúrguer com carne bovina, queijo, alface, tomate e maionese.</p>
+                <input type="checkbox" name="lanches[]" value="X-Salada">
+                <select name="quantidade_x-salada">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <span class="price">R$ 8,90</span>
+            </div>
+        </div>
+
+        <h2>Bebidas</h2>
+        <div class="menu">
+            <div class="menu-item">
+                <img src="https://static.paodeacucar.com/img/uploads/1/370/12744370.jpeg">
+                <h3>Fanta</h3>
+                <p>Refrigerante sabor laranja.</p>
+                <input type="checkbox" name="bebidas[]" value="Fanta">
+                <select name="quantidade_fanta">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <span class="price">R$ 5,00</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/pereirao/media/uploads/produtos/foto/cfpsiujr/file.jpg">
+                <h3>Conquista</h3>
+                <p>Refrigerante sabor guaraná.</p>
+                <input type="checkbox" name="bebidas[]" value="Conquista">
+                <select name="quantidade_conquista">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <span class="price">R$ 5,50</span>
+            </div>
+        </div>
+
+        <h2>Porções</h2>
+        <div class="menu">
+            <div class="menu-item">
+                <img src="https://www.tendaatacado.com.br/dicas/wp-content/uploads/2022/06/como-fazer-batata-frita-topo.jpg">
+                <h3>Batata Frita</h3>
+                <p>Crocante porção de batata frita.</p>
+                <input type="checkbox" name="porcoes[]" value="Batata Frita">
+                <select name="quantidade_batata_frita">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <span class="price">R$ 10,00</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://www.designi.com.br/images/preview/10119198.jpg">
+                <h3>Anéis de Cebola</h3>
+                <p>Porção de anéis de cebola empanados.</p>
+                <input type="checkbox" name="porcoes[]" value="Anéis de Cebola">
+                <select name="quantidade_aneis_de_cebola">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <span class="price">R$ 12,00</span>
+            </div>
+        </div>
+
+        <h2>Doces</h2>
+        <div class="menu">
+            <div class="menu-item">
+                <img src="https://www.cozinhaaz.com/wp-content/uploads/2023/10/brigadeiro.jpg">
+                <h3>Brigadeiro</h3>
+                <p>Doce tradicional de chocolate.</p>
+                <input type="checkbox" name="doces[]" value="Brigadeiro">
+                <select name="quantidade_brigadeiro">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <span class="price">R$ 2,00</span>
+            </div>
+        </div>
+
+        <div class="observacao">
+            <label for="observacao">Observações sobre o pedido:</label>
+            <textarea id="observacao" name="observacao" placeholder="Escreva aqui suas observações, como retirar ingredientes ou adicionar algum comentário..." rows="4"></textarea>
+        </div>
+
+        <input type="submit" value="Finalizar Pedido">
+    </form>
+
+</body>
+</html>
